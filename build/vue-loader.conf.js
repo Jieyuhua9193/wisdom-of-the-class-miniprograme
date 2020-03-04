@@ -1,15 +1,10 @@
-var utils = require('./utils')
-var config = require('../config')
-// var isProduction = process.env.NODE_ENV === 'production'
-// for mp
-var isProduction = true
+const utils = require('./utils')
+const config = require('../config')
 
 module.exports = {
   loaders: utils.cssLoaders({
-    sourceMap: isProduction
-      ? config.build.productionSourceMap
-      : config.dev.cssSourceMap,
-    extract: isProduction
+    sourceMap: config.build.productionSourceMap,
+    extract: true
   }),
   transformToRequire: {
     video: 'src',
@@ -17,5 +12,10 @@ module.exports = {
     img: 'src',
     image: 'xlink:href'
   },
-  fileExt: config.build.fileExt
+  fileExt: {
+    template: 'wxml',
+    script: 'js',
+    style: 'wxss',
+    platform: 'wx'
+  }
 }

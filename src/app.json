@@ -1,44 +1,48 @@
 {
   "pages": [
-    "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "index/views/index",
+    "class/views/index",
+    "edu/views/index",
+    "user/views/index"
+  ],
+  "subPackages": [
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#999",
-    "backgroundColor": "#fafafa",
-    "selectedColor": "#333",
+    "backgroundColor": "#fcfcfc",
     "borderStyle": "white",
-
-    "list": [{
-      "text": "首页",
-      "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
-    }, {
-      "text": "订单",
-      "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
-    }],
-
-    "items": [{
-      "name": "首页",
-      "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
-    }],
-    "position": "bottom"
+    "color": "#dbdbdb",
+    "selectedColor": "#6711bb",
+    "list": [
+      {
+        "pagePath": "index/views/index",
+        "text": "首页",
+        "iconPath": "static/tab/index.png",
+        "selectedIconPath": "static/tab/index-c.png"
+      },
+      {
+        "pagePath": "class/views/index",
+        "text": "班级",
+        "iconPath": "static/tab/class.png",
+        "selectedIconPath": "static/tab/class-c.png"
+      },
+      {
+        "pagePath": "edu/views/index",
+        "text": "教务",
+        "iconPath": "static/tab/edu.png",
+        "selectedIconPath": "static/tab/edu-c.png"
+      },
+      {
+        "pagePath": "user/views/index",
+        "text": "我的",
+        "iconPath": "static/tab/user.png",
+        "selectedIconPath": "static/tab/user-c.png"
+      }
+    ]
   }
 }
