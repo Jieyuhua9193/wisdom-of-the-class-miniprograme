@@ -1,6 +1,6 @@
 <template>
   <div class="page-index">
-    首页
+    index
   </div>
 </template>
 
@@ -12,6 +12,8 @@ export default {
     navigationBarBackgroundColor: '#fff',
     navigationBarTextStyle: 'black',
     enablePullDownRefresh: false
+  },
+  methods: {
   }
 }
 </script>

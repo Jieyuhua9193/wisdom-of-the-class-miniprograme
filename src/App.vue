@@ -1,31 +1,37 @@
 <script>
-export default {
-  created () {
-    // 调用API从本地缓存中获取数据
-    /*
-     * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
-     * 微信：mpvue === wx, mpvuePlatform === 'wx'
-     * 头条：mpvue === tt, mpvuePlatform === 'tt'
-     * 百度：mpvue === swan, mpvuePlatform === 'swan'
-     * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
-     */
+import commonVuex from '@/common/vuex/common'
 
-    let logs
-    if (mpvuePlatform === 'my') {
-      logs = mpvue.getStorageSync({key: 'logs'}).data || []
-      logs.unshift(Date.now())
-      mpvue.setStorageSync({
-        key: 'logs',
-        data: logs
-      })
-    } else {
-      logs = mpvue.getStorageSync('logs') || []
-      logs.unshift(Date.now())
-      mpvue.setStorageSync('logs', logs)
-    }
+export default {
+  mixins: [commonVuex],
+  created () {
+    this.login()
   },
-  log () {
-    console.log(`log at:${Date.now()}`)
+  onShow () {
+  },
+  methods: {
+    login () {
+      wx.login({
+        success: r => {
+          if (r && r.code) {
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session',
+              data: {
+                appid: 'wx34c5a9c126fefd75',
+                secret: '82f2e2934b30301922549dbb4dee69dc',
+                js_code: r.code,
+                grant_type: 'authorization_code',
+                success: res => {
+                  console.log('request success', res)
+                },
+                fail: err => {
+                  console.log('err', err)
+                }
+              }
+            })
+          }
+        }
+      })
+    }
   }
 }
 </script>

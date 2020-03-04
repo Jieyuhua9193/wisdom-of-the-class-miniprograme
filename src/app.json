@@ -3,7 +3,11 @@
     "index/views/index",
     "class/views/index",
     "edu/views/index",
-    "user/views/index"
+    "user/views/index",
+    {
+      "path": "user/views/register",
+      "subPackage": false
+    }
   ],
   "subPackages": [
   ],
