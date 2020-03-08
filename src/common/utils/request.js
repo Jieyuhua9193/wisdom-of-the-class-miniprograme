@@ -9,7 +9,7 @@ request.config.baseURL = 'http://localhost:8088' // api-俞龙
 
 request.interceptors.request.use((request) => {
   if (request.method === 'GET') {
-    request.headers['content-type'] = 'text/html'
+    request.headers['content-type'] = 'application/json'
   }
   request.headers['category'] = 3
   request.headers['miniprogram'] = 'true'

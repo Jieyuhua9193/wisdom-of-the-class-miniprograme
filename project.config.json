@@ -2,7 +2,7 @@
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
+		"es6": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
@@ -23,7 +23,7 @@
 	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"appid": "wx34c5a9c126fefd75",
-	"projectname": "cms-mini",
+	"projectname": "wisdom-of-the-class-miniprograme",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
