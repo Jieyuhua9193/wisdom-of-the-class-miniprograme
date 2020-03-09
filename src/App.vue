@@ -47,14 +47,14 @@ export default {
 .nav-list {
   display: flex;
   flex-wrap: wrap;
-  padding: 0px 40 rpx 0px;
+  padding: 0 20px 0px;
   justify-content: space-between;
 }
 .nav-li {
-  padding: 30 rpx;
-  border-radius: 12 rpx;
+  padding: 15px;
+  border-radius: 6px;
   width: 45%;
-  margin: 0 2.5% 40 rpx;
+  margin: 0 2.5% 20px;
   background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
   background-size: cover;
   background-position: center;
@@ -70,35 +70,35 @@ export default {
   height: 100%;
   left: 0;
   bottom: -10%;
-  border-radius: 10 rpx;
+  border-radius: 5px;
   opacity: 0.2;
   transform: scale(0.9, 0.9);
 }
 .nav-li.cur {
   color: #fff;
   background: rgb(94, 185, 94);
-  box-shadow: 4 rpx 4 rpx 6 rpx rgba(94, 185, 94, 0.4);
+  box-shadow: 2px 2px 3px rgba(94, 185, 94, 0.4);
 }
 .nav-title {
-  font-size: 32 rpx;
+  font-size: 16px;
   font-weight: 300;
 }
 .nav-title::first-letter {
-  font-size: 40 rpx;
-  margin-right: 4 rpx;
+  font-size: 20px;
+  margin-right: 2px;
 }
 .nav-name {
-  font-size: 28 rpx;
+  font-size: 14px;
   text-transform: Capitalize;
-  margin-top: 20 rpx;
+  margin-top: 10px;
   position: relative;
 }
 .nav-name::before {
   content: "";
   position: absolute;
   display: block;
-  width: 40 rpx;
-  height: 6 rpx;
+  width: 20px;
+  height: 3px;
   background: #fff;
   bottom: 0;
   right: 0;
@@ -108,27 +108,27 @@ export default {
   content: "";
   position: absolute;
   display: block;
-  width: 100 rpx;
+  width: 50px;
   height: 1px;
   background: #fff;
   bottom: 0;
-  right: 40 rpx;
+  right: 20px;
   opacity: 0.3;
 }
 .nav-name::first-letter {
   font-weight: bold;
-  font-size: 36 rpx;
+  font-size: 18px;
   margin-right: 1px;
 }
 .nav-li text {
   position: absolute;
-  right: 30 rpx;
-  top: 30 rpx;
-  font-size: 52 rpx;
-  width: 60 rpx;
-  height: 60 rpx;
+  right: 15px;
+  top: 15px;
+  font-size: 26px;
+  width: 30px;
+  height:30px;
   text-align: center;
-  line-height: 60 rpx;
+  line-height: 30px;
 }
 .text-light {
   font-weight: 300;

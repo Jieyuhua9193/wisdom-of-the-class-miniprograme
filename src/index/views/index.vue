@@ -1,10 +1,11 @@
 <template>
   <div class="page-index">
-    index
+    <BindDialog />
   </div>
 </template>
 
 <script>
+import BindDialog from '@/common/components/BindDialog.vue'
 
 export default {
   config: {
@@ -14,6 +15,9 @@ export default {
     enablePullDownRefresh: false
   },
   methods: {
+  },
+  components: {
+    BindDialog
   }
 }
 </script>
