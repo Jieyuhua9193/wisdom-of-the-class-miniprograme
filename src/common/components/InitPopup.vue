@@ -31,9 +31,9 @@ export default {
     show: Boolean
   },
   methods: {
-    bind (e) {
-      console.log(e)
+    bind () {
       this.$emit('close')
+      this.$router.push('/user/views/bind')
     },
     create () {
       this.$emit('close')

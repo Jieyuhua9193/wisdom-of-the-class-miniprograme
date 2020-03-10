@@ -40,3 +40,18 @@ function returnMock (config) {
   })
   return () => promise
 }
+
+request.interceptors.response.use(
+  (response, promise) => {
+    return promise.resolve(response.data)
+  },
+  (err, promise) => {
+    console.log(err)
+    // wx.showToast({
+    //   title: '系统错误，请重试',
+    //   icon: 'none',
+    //   duration: 1000
+    // })
+    return promise.reject(err)
+  }
+)

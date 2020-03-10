@@ -7,6 +7,10 @@
     {
       "path": "user/views/create",
       "subPackage": false
+    },
+    {
+      "path": "user/views/bind",
+      "subPackage": false
     }
   ],
   "subPackages": [
