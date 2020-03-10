@@ -1,16 +1,19 @@
 <template>
-  <div class="page-index">
-    班级
+  <div class="wrap">
+    <cu-custom
+      bgColor="bg-gradual-purple" :isBack="false">
+      <view slot="backText">返回</view>
+      <view slot="content">班级</view>
+    </cu-custom>
   </div>
 </template>
 
 <script>
+
 export default {
   config: {
-    navigationBarTitleText: '班级',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTextStyle: 'black',
-    enablePullDownRefresh: false
+    navigationStyle: 'custom',
+    backgroundColor: '#F8F8F8'
   }
 }
 </script>

@@ -4,6 +4,51 @@ import commonClient from '@/common/apis'
 
 export default {
   mixins: [commonVuex],
+  globalConfig: {
+    navigationStyle: 'custom',
+    backgroundColor: '#F8F8F8',
+    usingComponents: {
+      'cu-custom': 'static/colorui/components/cu-custom',
+      'van-button': 'static/vant/button/index',
+      'van-tag': 'static/vant/tag/index',
+      'van-icon': 'static/vant/icon/index',
+      'van-cell': 'static/vant/cell/index',
+      'van-cell-group': 'static/vant/cell-group/index',
+      'van-toast': 'static/vant/toast/index',
+      'van-tabs': 'static/vant/tabs/index',
+      'van-tab': 'static/vant/tab/index',
+      'van-radio': 'static/vant/radio/index',
+      'van-radio-group': 'static/vant/radio-group/index',
+      'van-area': 'static/vant/area/index',
+      'van-field': 'static/vant/field/index',
+      'van-loading': 'static/vant/loading/index',
+      'van-row': 'static/vant/row/index',
+      'van-col': 'static/vant/col/index',
+      'van-checkbox': 'static/vant/checkbox/index',
+      'van-checkbox-group': 'static/vant/checkbox-group/index',
+      'van-action-sheet': 'static/vant/action-sheet/index',
+      'van-datetime-picker': 'static/vant/datetime-picker/index',
+      'van-stepper': 'static/vant/stepper/index',
+      'van-dialog': 'static/vant/dialog/index',
+      'van-picker': 'static/vant/picker/index',
+      'van-steps': 'static/vant/steps/index',
+      'van-rate': 'static/vant/rate/index',
+      'van-search': 'static/vant/search/index',
+      'van-popup': 'static/vant/popup/index',
+      'van-switch': 'static/vant/switch/index'
+    }
+  },
+  onLaunch () {
+    wx.getSystemInfo({
+      success: e => {
+        let app = this.$mp.app
+        app.globalData.StatusBar = e.statusBarHeight
+        let custom = wx.getMenuButtonBoundingClientRect()
+        app.globalData.Custom = custom
+        app.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight
+      }
+    })
+  },
   created () {
     this.login()
   },
@@ -14,8 +59,14 @@ export default {
           if (r && r.code) {
             wx.request({
               success: res => {
-                commonClient.login({openid: res.data.openid}).then(res => {
-                  console.log(res)
+                this.$store.commit('SET_MINI_INFO', res.data)
+                commonClient.login({ openid: res.data.openid }).then(r => {
+                  if (r.code === 0) {
+                    this.$store.commit('SET_USER_INFO', r.msg.user)
+                    this.$store.commit('SET_TOKEN', r.msg.token)
+                  }
+                }).catch(err => {
+                  console.log(err)
                 })
               },
               fail: err => {
@@ -126,7 +177,7 @@ export default {
   top: 15px;
   font-size: 26px;
   width: 30px;
-  height:30px;
+  height: 30px;
   text-align: center;
   line-height: 30px;
 }

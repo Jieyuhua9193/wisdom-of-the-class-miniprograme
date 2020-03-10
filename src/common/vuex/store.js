@@ -1,5 +1,7 @@
 export default {
   commonState: {
-    userInfo: null
+    userInfo: null,
+    miniInfo: null,
+    token: null
   }
 }

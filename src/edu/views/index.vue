@@ -1,6 +1,10 @@
 <template>
-  <div class="page-edu">
-    教务
+  <div class="wrap">
+    <cu-custom
+      bgColor="bg-gradual-purple" :isBack="false">
+      <view slot="backText">返回</view>
+      <view slot="content">教务</view>
+    </cu-custom>
   </div>
 </template>
 
@@ -8,10 +12,8 @@
 
 export default {
   config: {
-    navigationBarTitleText: '教务',
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTextStyle: 'black',
-    enablePullDownRefresh: false
+    navigationStyle: 'custom',
+    backgroundColor: '#F8F8F8'
   }
 }
 </script>

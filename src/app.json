@@ -5,7 +5,7 @@
     "edu/views/index",
     "user/views/index",
     {
-      "path": "user/views/register",
+      "path": "user/views/create",
       "subPackage": false
     }
   ],
