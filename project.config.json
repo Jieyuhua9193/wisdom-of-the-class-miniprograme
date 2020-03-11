@@ -54,6 +54,13 @@
 					"id": -1,
 					"name": "创建身份",
 					"pathName": "user/views/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "user/views/index",
 					"scene": null
 				}
 			]

@@ -7,6 +7,12 @@ export default {
     },
     miniInfo (state) {
       return state.commonState.miniInfo
+    },
+    isLoaded (state) {
+      return state.commonState.isLoaded
+    },
+    classInfo (state) {
+      return state.commonState.classInfo
     }
   })
 }

@@ -61,11 +61,12 @@ export default {
               success: res => {
                 this.$store.commit('SET_MINI_INFO', res.data)
                 commonClient.login({ openid: res.data.openid }).then(r => {
-                  console.log('login', r)
                   if (r.code === 0) {
                     this.$store.commit('SET_USER_INFO', r.result.user)
                     this.$store.commit('SET_TOKEN', r.result.token)
+                    this.getClassInfo()
                   }
+                  this.$store.commit('IS_LOADED')
                 }).catch(err => {
                   console.log(err)
                 })
@@ -83,6 +84,13 @@ export default {
               }
             })
           }
+        }
+      })
+    },
+    getClassInfo () {
+      commonClient.getClassInfo({}).then(r => {
+        if (r.code === 0) {
+          this.$store.commit('SET_CLASS_INFO', r.result)
         }
       })
     }

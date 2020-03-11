@@ -7,5 +7,11 @@ export default {
   },
   SET_TOKEN: (state, token) => {
     state.commonState.token = token
+  },
+  IS_LOADED: (state) => {
+    state.commonState.isLoaded = true
+  },
+  SET_CLASS_INFO: (state, classInfo) => {
+    state.commonState.classInfo = classInfo
   }
 }
