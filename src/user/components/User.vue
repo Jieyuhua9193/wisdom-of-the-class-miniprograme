@@ -10,20 +10,26 @@
         class="gif-wave"
         alt=""/>
     </div>
-    <StatisticBar />
+    <StatisticBar
+      :userInfo="userInfo"
+      :classInfo="classInfo"/>
+    <iMenu
+      :userInfo="userInfo"/>
   </div>
 </template>
 
 <script>
 import BaseInfo from './user/BaseInfo.vue'
 import StatisticBar from './user/StatisticBar'
+import iMenu from './user/Menu.vue'
 import commonVuex from '@/common/vuex/common'
 
 export default {
   mixins: [commonVuex],
   components: {
     BaseInfo,
-    StatisticBar
+    StatisticBar,
+    iMenu
   }
 }
 </script>

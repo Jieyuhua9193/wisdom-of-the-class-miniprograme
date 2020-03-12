@@ -15,16 +15,20 @@
       <span class="class-name">
       （{{classInfo.name}}）
       </span>
-      <span class="tag bg-gradual-orange shadow-blur">班主任</span>
+      <span
+        v-if="role"
+        class="tag bg-gradual-orange shadow-blur">{{role}}</span>
     </div>
   </div>
 </template>
 
 <script>
+import Role from '@/common/models/Role'
+
 export default {
   props: {
-    userInfo: {type: Object},
-    classInfo: {type: Object}
+    userInfo: { type: Object },
+    classInfo: { type: Object }
   },
   computed: {
     avatar () {
@@ -38,6 +42,37 @@ export default {
         return `background-image:url(${this.classInfo.avatar})`
       }
       return ''
+    },
+    role () {
+      if (this.userInfo) {
+        const { role } = this.userInfo
+        switch (role) {
+          case Role.admin:
+            return '班主任'
+          case Role.counselor:
+            return '辅导员'
+          case Role.teacher:
+            return '任课教师'
+          case Role.classMonitor:
+            return '班长'
+          case Role.viceClassMonitor:
+            return '副班长'
+          case Role.partyBranch:
+            return '团支书'
+          case Role.vicePartyBranch:
+            return '副团支书'
+          case Role.financial:
+            return '财务'
+          case Role.lifeAdmin:
+            return '生活委员'
+          case Role.culturalAdmin:
+            return '文艺委员'
+          case Role.moralEducationAdmin:
+            return '德育委员'
+          default:
+            return '学生'
+        }
+      }
     }
   }
 }
