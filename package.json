@@ -8,8 +8,7 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src",
-    "postbuild": "cp ext.json dist/ext.json"
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "dayjs": "^1.8.16",
