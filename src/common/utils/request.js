@@ -6,8 +6,8 @@ const request = new Fly()
 
 // 可以进行拦截器、全局config等等设置
 
-// request.config.baseURL = 'http://localhost:8088'
-request.config.baseURL = 'http://192.168.31.89:8088'
+request.config.baseURL = 'http://localhost:8088'
+// request.config.baseURL = 'http://192.168.31.89:8088'
 
 request.interceptors.request.use((request) => {
   if (request.method === 'GET') {
