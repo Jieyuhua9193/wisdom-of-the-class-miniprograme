@@ -1,17 +1,13 @@
 <template>
   <div class="wrap">
-    <cu-custom
-      bgColor="bg-gradual-purple" :isBack="false">
-      <view slot="backText">返回</view>
-      <view slot="content">首页</view>
-    </cu-custom>
-    <BindDialog/>
+    <div class="header-bar bg-gradual-purple">
+      <h1 class="title text-center">首页</h1>
+    </div>
     <Index />
   </div>
 </template>
 
 <script>
-import BindDialog from '@/common/components/BindDialog.vue'
 import Index from '../components/Index.vue'
 
 export default {
@@ -21,8 +17,35 @@ export default {
   },
   methods: {},
   components: {
-    BindDialog,
     Index
   }
 }
 </script>
+
+<style scoped>
+.header-bar {
+  width: 140%;
+  height: 165px;
+  position: absolute;
+  left: -20%;
+  top: 0;
+  border-radius: 0 0 50% 50%
+}
+.header-bar .title {
+  position: absolute;
+  text-align: center;
+  width: calc(100% - 170px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: 57px;
+  font-size: 18px;
+  cursor: none;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+</style>
