@@ -5,6 +5,7 @@
       @close="showInitPopup = false"/>
     <Notices />
     <NewsActives />
+    <Entry />
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import InitPopup from '@/common/components/InitPopup'
 import Notices from './Notices.vue'
 import NewsActives from './NewsActives.vue'
+import Entry from './Entry.vue'
 import commonVuex from '@/common/vuex/common'
 
 export default {
@@ -19,7 +21,8 @@ export default {
   components: {
     InitPopup,
     Notices,
-    NewsActives
+    NewsActives,
+    Entry
   }
 }
 </script>
@@ -27,5 +30,6 @@ export default {
 <style scoped>
 .page-index {
   padding-top: 84px;
+  padding-bottom: 20px;
 }
 </style>

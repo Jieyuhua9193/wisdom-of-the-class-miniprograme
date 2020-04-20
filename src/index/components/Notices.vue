@@ -51,7 +51,6 @@ export default {
   },
   methods: {
     onChange (e) {
-      console.log(e)
       const { current } = e.mp.detail
       this.curCard = current
     }

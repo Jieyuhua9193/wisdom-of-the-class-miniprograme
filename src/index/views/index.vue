@@ -26,7 +26,7 @@ export default {
 .header-bar {
   width: 140%;
   height: 165px;
-  position: absolute;
+  position: fixed;
   left: -20%;
   top: 0;
   border-radius: 0 0 50% 50%
