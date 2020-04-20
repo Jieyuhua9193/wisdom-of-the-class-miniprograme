@@ -1,31 +1,41 @@
 <template>
-  <div class="base-info">
-    <div class="cu-avatar-group">
+  <div class="wrap">
+    <button
+      class="login-box bg-gradual-blue shadow-blur text-center"
+      v-if="!userInfo"
+      @click="login">
+      <h3 class="text">微信授权一键登录</h3>
+    </button>
+    <div class="base-info" v-else>
+      <div class="cu-avatar-group">
       <span
         class="cu-avatar round lg"
         :style="classAvatar"></span>
-      <span
-        class="cu-avatar round lg"
-        :style="avatar"></span>
-    </div>
-    <div class="info">
-      <em class="name">
-        {{userInfo.realName}}
-      </em>
-      <span class="class-name">
+        <span
+          class="cu-avatar round lg"
+          :style="avatar"></span>
+      </div>
+      <div class="info">
+        <em class="name">
+          {{userInfo.realName}}
+        </em>
+        <span class="class-name">
       （{{classInfo.name}}）
       </span>
-      <span
-        v-if="role"
-        class="tag bg-gradual-orange shadow-blur">{{role}}</span>
+        <span
+          v-if="role"
+          class="tag bg-gradual-orange shadow-blur">{{role}}</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Role from '@/common/models/Role'
+import loginMixins from '@/common/mixins/login'
 
 export default {
+  mixins: [loginMixins],
   props: {
     userInfo: { type: Object },
     classInfo: { type: Object }
@@ -100,5 +110,17 @@ export default {
   border-radius: 6px;
   font-size: 10px;
   vertical-align: middle;
+}
+.login-box {
+  width: 280px;
+  height: 100px;
+  border-radius: 10px;
+}
+.login-box .text {
+  line-height: 95px;
+  font-size: 14px;
+}
+.login-box:after {
+  display: none;
 }
 </style>

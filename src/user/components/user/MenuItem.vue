@@ -38,4 +38,7 @@ export default {
 .text-grey {
   margin-right: 5px;
 }
+.cu-item .content {
+  font-size: 12px !important;
+}
 </style>
