@@ -1,18 +1,18 @@
 <template>
   <div class="new-actives">
     <h3 class="title text-purple text-shadow">最新活动</h3>
-    <div class="active-list">
-      <ActiveItem />
+    <div class="active-list-wrap">
+      <ActiveList />
     </div>
   </div>
 </template>
 
 <script>
-import ActiveItem from '@/common/components/ui/ActiveItem.vue'
+import ActiveList from '@/common/components/ui/ActiveList.vue'
 
 export default {
   components: {
-    ActiveItem
+    ActiveList
   }
 }
 </script>
@@ -27,8 +27,7 @@ export default {
   font-weight: bold;
   letter-spacing: 1px;
 }
-.active-list {
+.active-list-wrap {
   margin-top: 10px;
-  padding: 10px;
 }
 </style>
